@@ -1,6 +1,6 @@
 spring:
   application:
-    name: orb-trading
+    name: orb-users
   cloud:
     config:
       failFast: true
