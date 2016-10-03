@@ -2,17 +2,15 @@ package com.kbhit.orangebox.trading.dbsetup.tables;
 
 import java.util.Arrays;
 
-public enum BidTable {
+public enum UsersTable {
 
-    BID_ID("BID_ID"),
-    PLACE_DATE("PLACE_DATE"),
-    BIDDER_ID("BIDDER_ID"),
-    TRADE_ID("TRADE_ID");
-
+    LOGIN("LOGIN"),
+    FIRST_NAME("FIRST_NAME"),
+    LAST_NAME("LAST_NAME");
     String columnName;
 
 
-    BidTable(String columnName) {
+    UsersTable(String columnName) {
         this.columnName = columnName;
     }
 
@@ -21,7 +19,7 @@ public enum BidTable {
     }
 
     public static String[] allColumns() {
-        return Arrays.stream(values()).map(BidTable::getColumnName).toArray(String[]::new);
+        return Arrays.stream(values()).map(UsersTable::getColumnName).toArray(String[]::new);
     }
 
 }

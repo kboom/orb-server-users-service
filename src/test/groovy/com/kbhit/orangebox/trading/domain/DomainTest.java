@@ -1,7 +1,7 @@
 package com.kbhit.orangebox.trading.domain;
 
 import com.kbhit.orangebox.trading.TestDataLoader;
-import com.kbhit.orangebox.trading.TradingApplication;
+import com.kbhit.orangebox.trading.UsersApplication;
 import com.kbhit.orangebox.trading.config.StandaloneConfig;
 import com.kbhit.orangebox.trading.config.TestServicesConfig;
 import org.junit.Before;
@@ -14,7 +14,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @ActiveProfiles("dev")
-@SpringBootTest(classes = {TradingApplication.class, StandaloneConfig.class, TestServicesConfig.class},
+@SpringBootTest(classes = {UsersApplication.class, StandaloneConfig.class, TestServicesConfig.class},
         webEnvironment = SpringBootTest.WebEnvironment.MOCK)
 public abstract class DomainTest {
 

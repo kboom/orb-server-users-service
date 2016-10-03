@@ -3,9 +3,9 @@ package com.kbhit.orangebox.trading.dbsetup.data;
 import com.ninja_squad.dbsetup.Operations;
 import com.ninja_squad.dbsetup.operation.Operation;
 
-import static com.kbhit.orangebox.trading.dbsetup.builders.BidderDummyBuilder.aDummyBidder;
+import static com.kbhit.orangebox.trading.dbsetup.builders.UsersDummyBuilder.aDummyBidder;
 
-public class InsertDummyBidders {
+public class InsertDummyUsers {
 
     static final String GRZEGORZ_BIDDER_ID = "greg";
 

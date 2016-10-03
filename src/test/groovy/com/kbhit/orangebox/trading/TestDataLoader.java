@@ -4,8 +4,4 @@ public interface TestDataLoader {
 
     void cleanTables();
 
-    void createDummyTrade();
-
-    void createDummyBidders();
-
 }

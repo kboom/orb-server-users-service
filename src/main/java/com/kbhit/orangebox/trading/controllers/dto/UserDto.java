@@ -1,6 +1,6 @@
 package com.kbhit.orangebox.trading.controllers.dto;
 
-public class BidderDto {
+public class UserDto {
 
     private String login;
 

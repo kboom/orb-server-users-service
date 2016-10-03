@@ -1,1 +1,1 @@
-web: java -jar -Dserver.port=$PORT build/libs/orb-trading-1.0.jar --spring.profiles.active=$APP_PROFILE
+web: java -jar -Dserver.port=$PORT build/libs/orb-users-1.0.jar --spring.profiles.active=$APP_PROFILE

@@ -1,8 +1,5 @@
 package com.kbhit.orangebox.trading.controllers;
 
-import com.kbhit.orangebox.trading.controllers.dto.TradeDto;
-import com.kbhit.orangebox.trading.domain.Trade;
-import com.kbhit.orangebox.trading.domain.repository.TradeRepository;
 import com.kbhit.orangebox.trading.security.AuthoritiesConstants;
 import io.swagger.annotations.ApiOperation;
 import org.dozer.Mapper;
@@ -20,7 +17,7 @@ import static com.kbhit.orangebox.trading.domain.TradeId.referenceTrade;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
 @RestController
-public class TradingController {
+public class UsersController {
 
     @Autowired
     private TradeRepository tradeRepository;

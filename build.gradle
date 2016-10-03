@@ -24,7 +24,7 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 orbService {
-    name = 'orb-trading'
+    name = 'orb-users'
     version = '1.0'
     configServerUri = 'http://orb-server-config:8888'
     serviceLocatorUri = 'http://orb-service-locator:8761/eureka'

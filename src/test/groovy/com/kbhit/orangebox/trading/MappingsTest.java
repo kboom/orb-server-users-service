@@ -1,10 +1,6 @@
 package com.kbhit.orangebox.trading;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.kbhit.orangebox.trading.domain.TradedItem;
-import com.kbhit.orangebox.trading.domain.Bid;
-import com.kbhit.orangebox.trading.domain.Bidder;
-import com.kbhit.orangebox.trading.domain.Trade;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 

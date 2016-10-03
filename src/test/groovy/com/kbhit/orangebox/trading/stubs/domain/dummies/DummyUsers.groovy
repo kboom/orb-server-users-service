@@ -1,6 +1,6 @@
 package com.kbhit.orangebox.trading.stubs.domain.dummies
 
-import com.kbhit.orangebox.trading.domain.Bidder
+
 import com.kbhit.orangebox.trading.domain.User
 import com.kbhit.orangebox.trading.stubs.domain.UserBuilder
 import org.springframework.stereotype.Component
