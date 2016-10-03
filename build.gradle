@@ -1,0 +1,79 @@
+import org.springframework.boot.gradle.run.BootRunTask
+
+buildscript {
+
+    repositories {
+        mavenCentral()
+        maven {
+            url "http://dl.bintray.com/kboom/gradle-plugins"
+        }
+    }
+
+    dependencies {
+        classpath 'com.kbhit.orangebox:orb-service-plugin:1.4'
+    }
+
+}
+
+apply plugin: 'orb-service'
+apply plugin: 'java'
+apply plugin: "groovy"
+apply plugin: 'idea'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+orbService {
+    name = 'orb-trading'
+    version = '1.0'
+    configServerUri = 'http://orb-server-config:8888'
+    serviceLocatorUri = 'http://orb-service-locator:8761/eureka'
+}
+
+docker {
+    url = 'http://192.168.99.100:2376'
+    certPath = file(System.getProperty('docker.cert.path') ?: "${System.getProperty('user.home')}/.docker/machine/machines/default")
+}
+
+repositories {
+    mavenCentral()
+}
+
+tasks.withType(BootRunTask) {
+    systemProperty('spring.profiles.active', 'dev')
+}
+
+dependencies {
+//    compile group: 'org .hibernate', name: 'hibernate-validator', version: '5.2.4.Final'
+    compile 'org.springframework.cloud:spring-cloud-starter-ribbon'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa'
+    compile 'org.springframework.cloud:spring-cloud-starter-feign'
+    compile 'org.hibernate:hibernate-core:5.2.1.Final'
+    compile 'org.jadira.usertype:usertype.core:6.0.0.GA'
+    compile group: 'com.h2database', name: 'h2', version: '1.4.192'
+    compile group: 'postgresql', name: 'postgresql', version: '9.1-901-1.jdbc4'
+    compile group: 'net.sf.dozer', name: 'dozer', version: '5.5.1'
+    compile group: 'joda-time', name: 'joda-time', version: '2.9.4'
+    compile group: 'joda-time', name: 'joda-time-hibernate', version: '1.4'
+    compile 'org.springframework.boot:spring-boot-starter-security'
+    compile 'io.jsonwebtoken:jjwt:0.6.0'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.8.1'
+
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-security-tests
+    // https://mvnrepository.com/artifact/com.github.tomakehurst/wiremock
+    testCompile group: 'com.github.tomakehurst', name: 'wiremock', version: '2.1.11'
+    testCompile group: 'com.ninja-squad', name: 'DbSetup', version: '2.1.0'
+    testCompile group: 'org.spockframework', name: 'spock-spring', version: '1.1-groovy-2.4-rc-1'
+    testCompile group: 'org.spockframework', name: 'spock-core', version: '1.1-groovy-2.4-rc-1'
+    testCompile group: 'com.jayway.restassured', name: 'rest-assured', version: '2.9.0'
+    testCompile group: 'com.jayway.restassured', name: 'json-schema-validator', version: '2.9.0'
+    testCompile group: 'org.assertj', name: 'assertj-core', version: '3.5.2'
+}
+
+task stage {
+    dependsOn build
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.14'
+}
