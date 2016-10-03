@@ -3,24 +3,17 @@ package com.kbhit.orangebox.trading.dbsetup.data;
 import com.ninja_squad.dbsetup.Operations;
 import com.ninja_squad.dbsetup.operation.Operation;
 
-import static com.kbhit.orangebox.trading.dbsetup.builders.UsersDummyBuilder.aDummyBidder;
+import static com.kbhit.orangebox.trading.dbsetup.builders.UsersDummyBuilder.aDummyUser;
 
 public class InsertDummyUsers {
 
-    static final String GRZEGORZ_BIDDER_ID = "greg";
-
-    static final String AGATA_BIDDER_ID = "agatha";
-
-
-    private static final Operation AGATA_BIDDER = aDummyBidder()
-            .withId(AGATA_BIDDER_ID)
+    private static final Operation AGATA_BIDDER = aDummyUser()
             .withFirstName("Agata")
             .withLastName("Gurgul")
             .withLogin("agatha")
             .build();
 
-    private static final Operation GRZEGORZ_BIDDER = aDummyBidder()
-            .withId(GRZEGORZ_BIDDER_ID)
+    private static final Operation GRZEGORZ_BIDDER = aDummyUser()
             .withFirstName("Grzegorz")
             .withLastName("Gurgul")
             .withLogin("greg")

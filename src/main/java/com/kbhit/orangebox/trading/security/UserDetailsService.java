@@ -1,7 +1,7 @@
 package com.kbhit.orangebox.trading.security;
 
 import com.kbhit.orangebox.trading.domain.User;
-import com.kbhit.orangebox.trading.domain.service.UserService;
+import com.kbhit.orangebox.trading.domain.repository.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,15 +23,14 @@ public class UserDetailsService implements org.springframework.security.core.use
     private final Logger log = LoggerFactory.getLogger(UserDetailsService.class);
 
     @Autowired
-    private UserService userService;
+    private UserRepository userRepository;
 
     @Override
     @Transactional
     public UserDetails loadUserByUsername(final String login) {
         log.debug("Authenticating {}", login);
         String lowercaseLogin = login.toLowerCase(Locale.ENGLISH);
-//        Optional<User> userFromDatabase = userService.findUserByLogin(lowercaseLogin);
-        Optional<User> userFromDatabase = Optional.ofNullable(userService.findUserByLogin(lowercaseLogin));
+        Optional<User> userFromDatabase = Optional.ofNullable(userRepository.findUserByLogin(lowercaseLogin));
         return userFromDatabase.map(user -> {
             if (!user.getActivated()) {
                 throw new UserNotActivatedException("User " + lowercaseLogin + " was not activated");

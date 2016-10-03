@@ -32,7 +32,7 @@ public class UsersDummyBuilder {
                 .values(orderedValuesMap.values().stream().toArray(Object[]::new)).build();
     }
 
-    public static UsersDummyBuilder aDummyBidder() {
+    public static UsersDummyBuilder aDummyUser() {
         return new UsersDummyBuilder();
     }
 

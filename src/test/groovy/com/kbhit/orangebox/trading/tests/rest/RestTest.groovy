@@ -6,7 +6,6 @@ import com.kbhit.orangebox.trading.UsersApplication
 import com.kbhit.orangebox.trading.config.StandaloneConfig
 import com.kbhit.orangebox.trading.config.TestUtilsConfig
 import com.kbhit.orangebox.trading.dbsetup.DbSetupTestDataLoader
-import com.kbhit.orangebox.trading.stubs.feign.UserServiceStubber
 import com.kbhit.orangebox.trading.security.jwt.TokenProvider
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
@@ -27,9 +26,6 @@ abstract class RestTest extends Specification {
 
     @Autowired
     WireMockServer wireMockServer
-
-    @Autowired
-    UserServiceStubber userServiceStubber;
 
     @Autowired
     TokenProvider tokenProvider

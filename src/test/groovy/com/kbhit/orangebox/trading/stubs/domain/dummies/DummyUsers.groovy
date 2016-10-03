@@ -1,7 +1,5 @@
 package com.kbhit.orangebox.trading.stubs.domain.dummies
 
-
-import com.kbhit.orangebox.trading.domain.User
 import com.kbhit.orangebox.trading.stubs.domain.UserBuilder
 import org.springframework.stereotype.Component
 
@@ -32,13 +30,6 @@ class DummyUsers {
                 .withAuthorities("user")
                 .withUsername("other")
                 .withPassword("secret");
-    }
-
-    static User getUserForBidder(Bidder bidder) {
-        aUser().withUsername(bidder.getLogin())
-                .withPassword("secret")
-                .withAuthorities("user")
-                .build()
     }
 
 }
