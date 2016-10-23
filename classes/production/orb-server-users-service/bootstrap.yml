@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: orb-users
+  cloud:
+    config:
+      failFast: true
+      uri: ${ORANGEBOX_CONFIG_SERVER_URI:http://localhost:8888}
+  jpa:
+    properties:
+      jadira:
+        usertype:
+          autoRegisterUserTypes: true
+---
+spring:
+  profiles: dev
+  cloud:
+    config:
+      enabled: false # use configuration from local application-dev.yml
