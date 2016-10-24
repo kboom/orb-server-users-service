@@ -21,11 +21,12 @@ public class MappingConfiguration {
 
     @Bean(name = "org.dozer.Mapper")
     public DozerBeanMapper dozerBean(
-            Collection<CustomConverter> customConverters,
-            Collection<BeanMappingBuilder> mappingBuilders) {
+//            Collection<CustomConverter> customConverters,
+//            Collection<BeanMappingBuilder> mappingBuilders
+    ) {
         DozerBeanMapper mapper = new DozerBeanMapper();
-        mapper.setCustomConverters(newArrayList(customConverters));
-        mappingBuilders.forEach(mapper::addMapping);
+//        mapper.setCustomConverters(newArrayList(customConverters));
+//        mappingBuilders.forEach(mapper::addMapping);
         return mapper;
     }
 

@@ -11,18 +11,23 @@ public class UsersDummyBuilder {
 
     private TreeMap<String, Object> orderedValuesMap = new TreeMap<>();
 
-    public UsersDummyBuilder withFirstName(String firstName) {
-        orderedValuesMap.put(FIRST_NAME.getColumnName(), firstName);
+    public UsersDummyBuilder withId(String login) {
+        orderedValuesMap.put(USER_ID.getColumnName(), login);
         return this;
     }
 
-    public UsersDummyBuilder withLastName(String lastName) {
-        orderedValuesMap.put(LAST_NAME.getColumnName(), lastName);
+    public UsersDummyBuilder withUsername(String login) {
+        orderedValuesMap.put(USERNAME.getColumnName(), login);
         return this;
     }
 
-    public UsersDummyBuilder withLogin(String login) {
-        orderedValuesMap.put(LOGIN.getColumnName(), login);
+    public UsersDummyBuilder withPassword(String password) {
+        orderedValuesMap.put(PASSWORD.getColumnName(), password);
+        return this;
+    }
+
+    public UsersDummyBuilder withActivated(boolean activated) {
+        orderedValuesMap.put(ACTIVATED.getColumnName(), activated);
         return this;
     }
 
@@ -35,5 +40,4 @@ public class UsersDummyBuilder {
     public static UsersDummyBuilder aDummyUser() {
         return new UsersDummyBuilder();
     }
-
 }

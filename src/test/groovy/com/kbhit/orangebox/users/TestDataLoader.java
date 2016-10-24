@@ -4,4 +4,5 @@ public interface TestDataLoader {
 
     void cleanTables();
 
+    void createDummyUsers();
 }

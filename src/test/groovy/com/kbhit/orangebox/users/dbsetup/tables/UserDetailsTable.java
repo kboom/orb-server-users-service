@@ -2,16 +2,15 @@ package com.kbhit.orangebox.users.dbsetup.tables;
 
 import java.util.Arrays;
 
-public enum UsersTable {
+public enum UserDetailsTable {
 
-    USER_ID("ID"),
-    USERNAME("USERNAME"),
-    PASSWORD("PASSWORD"),
-    ACTIVATED("ACTIVATED");
+    USER_ID("USER_ID"),
+    FIRST_NAME("FIRST_NAME"),
+    LAST_NAME("LAST_NAME");
     String columnName;
 
 
-    UsersTable(String columnName) {
+    UserDetailsTable(String columnName) {
         this.columnName = columnName;
     }
 
@@ -20,7 +19,7 @@ public enum UsersTable {
     }
 
     public static String[] allColumns() {
-        return Arrays.stream(values()).map(UsersTable::getColumnName).toArray(String[]::new);
+        return Arrays.stream(values()).map(UserDetailsTable::getColumnName).toArray(String[]::new);
     }
 
 }

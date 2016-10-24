@@ -1,6 +1,7 @@
 package com.kbhit.orangebox.users.dbsetup;
 
 import com.kbhit.orangebox.users.TestDataLoader;
+import com.kbhit.orangebox.users.dbsetup.data.InsertDummyUsers;
 import com.ninja_squad.dbsetup.DbSetup;
 import com.ninja_squad.dbsetup.destination.DataSourceDestination;
 import com.ninja_squad.dbsetup.operation.Operation;
@@ -18,6 +19,11 @@ public final class DbSetupTestDataLoader implements TestDataLoader {
     @Override
     public void cleanTables() {
         launchSequence(DataSetOperations.DELETE_ALL_DATA);
+    }
+
+    @Override
+    public void createDummyUsers() {
+        launchSequence(InsertDummyUsers.insertAll());
     }
 
     private void launchSequence(Operation... operations) {

@@ -6,6 +6,6 @@ import org.springframework.data.repository.Repository;
 
 public interface UserRepository extends Repository<User, UserId> {
 
-    User findUserByLogin(String login);
+    User findUserByUsername(String login);
 
 }

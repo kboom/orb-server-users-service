@@ -2,10 +2,10 @@ package com.kbhit.orangebox.users.tests.rest
 
 import com.github.tomakehurst.wiremock.WireMockServer
 import com.jayway.restassured.RestAssured
+import com.kbhit.orangebox.users.TestDataLoader
 import com.kbhit.orangebox.users.UsersApplication
 import com.kbhit.orangebox.users.config.StandaloneConfig
 import com.kbhit.orangebox.users.config.TestUtilsConfig
-import com.kbhit.orangebox.users.dbsetup.DbSetupTestDataLoader
 import com.kbhit.orangebox.users.security.jwt.TokenProvider
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
@@ -19,16 +19,16 @@ import spock.lang.Specification
 abstract class RestTest extends Specification {
 
     @Value('${local.server.port}')
-    int port
+    private int port
 
     @Autowired
-    DbSetupTestDataLoader testDataLoader
+    private TestDataLoader testDataLoader
 
     @Autowired
-    WireMockServer wireMockServer
+    private WireMockServer wireMockServer
 
     @Autowired
-    TokenProvider tokenProvider
+    private TokenProvider tokenProvider
 
     def setup() {
         RestAssured.port = port
